@@ -14,10 +14,10 @@ const LINKS = [
 export function Logo({ light = false }) {
   return (
     <a href="#top" className="flex flex-col leading-none" aria-label={COMPANY.name}>
-      <span className={`font-serif text-[1.9rem] font-semibold ${light ? 'text-white' : 'text-ink-900'}`}>
+      <span className={`font-serif text-[1.9rem] font-semibold whitespace-nowrap ${light ? 'text-white' : 'text-ink-900'}`}>
         M Cars <em className={`font-medium italic ${light ? 'text-gold-400' : 'text-brand-600'}`}>Service</em>
       </span>
-      <span className={`mt-1 text-[0.62rem] font-bold tracking-[0.32em] uppercase ${light ? 'text-gold-300' : 'text-gold-500'}`}>
+      <span className={`mt-1 text-[0.62rem] font-bold tracking-[0.32em] whitespace-nowrap uppercase ${light ? 'text-gold-300' : 'text-gold-500'}`}>
         Servicing &amp; Repairs · Manchester
       </span>
     </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
 
-        <ul className="hidden items-center gap-10 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-10">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         <button
           onClick={() => openBooking()}
-          className="hidden items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:-translate-y-0.5 hover:bg-brand-700 lg:flex"
+          className="hidden items-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 whitespace-nowrap xl:px-7 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:-translate-y-0.5 hover:bg-brand-700 lg:flex"
         >
           <CalendarCheck className="h-5 w-5" /> Book a Service
         </button>

@@ -44,15 +44,15 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <p className="animate-fade-up text-xs font-bold tracking-[0.3em] text-white/90 uppercase sm:text-sm">
             Car Servicing &amp; Repairs · Manchester
           </p>
 
-          <h1 className="animate-fade-up mt-6 text-5xl leading-[1.05] text-balance text-white [animation-delay:100ms] sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
-            Expert care for your car,
+          <h1 className="animate-fade-up mt-6 text-[2.6rem] leading-[1.1] text-white [animation-delay:100ms] sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block sm:whitespace-nowrap">Expert care for your car,</span>
             {/* fixed height so the layout doesn't jump while typing */}
-            <em className="block min-h-[2.1em] font-medium text-gold-300 italic sm:min-h-[1.05em]">
+            <em className="block min-h-[2.2em] font-medium text-gold-300 italic sm:min-h-[1.1em] sm:whitespace-nowrap">
               <Typewriter words={HEADLINES} />
             </em>
           </h1>
