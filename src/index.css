@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* British racing green + brass gold on warm cream */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --color-brand-50: #eef6f1;
+  --color-brand-100: #d3e8dc;
+  --color-brand-500: #2f7d5c;
+  --color-brand-600: #1f5f45;
+  --color-brand-700: #174a36;
+  --color-gold-300: #e6cf9a;
+  --color-gold-400: #d4b26a;
+  --color-gold-500: #c09a4a;
+  --color-cream: #faf7f0;
+  --color-ink-900: #0e1a15;
+  --color-ink-800: #15241d;
+  --color-ink-700: #1e3229;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes ken-burns {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+.animate-fade-up { animation: fade-up 0.7s ease-out both; }
+.animate-pop-in { animation: pop-in 0.25s ease-out both; }
+.animate-ken-burns { animation: ken-burns 8s ease-out both; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* image cards: smooth zoom on hover */
+.img-zoom img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.img-zoom:hover img { transform: scale(1.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-fade-up, .animate-pop-in, .animate-ken-burns { animation: none; }
+  .img-zoom:hover img { transform: none; }
+}
